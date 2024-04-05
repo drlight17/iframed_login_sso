@@ -12,7 +12,11 @@ In order to use this you will need:
 2. Install and configure dovecot_impersonate plugin with the same separator from dovecot config
 3. (!) Configure your roundcube web server or reverse proxy to allow embedding roundcube into nextcloud iframe (origin policies)
 4. Place nc-login.php to the root dir of your roundcube instance
-5. Place php-jwt in the root dir of your roundcube instance (you also could use composer for this but it will require some appropriate nc-login.php source code changes):
+5. Edit nc-login.php config section, add your dovecot master password attributes and public key from nextcloud external app (use command below to get the key):
+```
+sudo -u www-user /path/to/your/nextcloud/occ config:app:get external jwt_token_pubkey_es256
+```
+7. Place php-jwt in the root dir of your roundcube instance (you also could use composer for this but it will require some appropriate nc-login.php source code changes):
 ```
 # cd /rouncude_path
 # git clone https://github.com/firebase/php-jwt
