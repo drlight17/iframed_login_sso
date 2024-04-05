@@ -1,0 +1,30 @@
+<?php
+
+$config = array();
+
+// jwt public key, for nextcloud external site app get it using command:
+// occ config:app:get external jwt_token_pubkey_es256
+$config['key'] = "-----BEGIN PUBLIC KEY-----
+somekeyasfdfgdfhlksdhjfghkljhasdflgkjhaLSDFKJGH
+-----END PUBLIC KEY-----";
+
+// set leeway for time difference between your server and Roundcube (in seconds)
+$config['leeway'] = 5;
+
+
+// name of the request parameter web token formatted with payload
+$config['jwt_req_parameter'] = "jwt";
+
+// name of the decoded jwt claim type with login (email)
+$config['jwt_login_claim'] = "email";
+
+// your dovecot impersonate master login and password
+$config['dovecot_impersonate_login'] = "dovecot_master_login";
+$config['dovecot_impersonate_separator'] = "*";
+$config['dovecot_impersonate_password'] = "dovecot_master_password";
+
+// hide logout button if autologged in
+$config['hide_logout'] = true;
+
+// show default RC logo if autologged in
+$config['show_default_logo'] = true;

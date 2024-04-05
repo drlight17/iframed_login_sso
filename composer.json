@@ -1,0 +1,30 @@
+{
+    "name": "roundcube/iframed_login_sso",
+    "type": "roundcube-plugin",
+    "description": "Roundcube Webmail iframe SSO connector",
+    "license": "GPL-3.0-or-later",
+    "keywords": ["sso","kerberos","mail","saml","openid", "dovecot_impersonate"],
+    "homepage": "https://github.com/drlight17/iframed-login-sso",
+    "version": "0.1",
+    "authors": [
+        {
+            "name": "Samoilov Your aka drlight",
+            "email": "root@drlight.fun",
+            "role": "Lead"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://plugins.roundcube.net"
+        }
+    ],
+    "require": {
+        "php": ">=7.3.0"
+    },
+    "extra": {
+        "roundcube": {
+            "min-version": "1.2.0"
+        }
+    }
+}
