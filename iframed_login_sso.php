@@ -30,7 +30,7 @@ class iframed_login_sso extends rcube_plugin
 {
 
 
-    public $task = 'login|logout|settings|mail';
+    public $task = 'login|logout|settings|mail|addressbook';
 
     /**
      * Plugin initialization
