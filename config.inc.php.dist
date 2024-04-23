@@ -28,3 +28,7 @@ $config['hide_logout'] = true;
 
 // show default RC logo if autologged in
 $config['show_default_logo'] = true;
+
+// hide RC logo if autologged in
+$config['hide_logo'] = false;
+
