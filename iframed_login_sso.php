@@ -55,7 +55,8 @@ class iframed_login_sso extends rcube_plugin
         }
 
         if (isset($_COOKIE["autologin"])&&($RCMAIL->config->get('hide_logout'))&&$iframed) {
-            $this->add_hook('ready', [$this, 'hide_logout']);
+            //$this->add_hook('ready', [$this, 'hide_logout']);
+            $this->include_stylesheet('hide_logout.css');
         }
 
         if (isset($_COOKIE["autologin"])&&($RCMAIL->config->get('show_default_logo'))&&$iframed) {
@@ -163,12 +164,12 @@ class iframed_login_sso extends rcube_plugin
      *
      * @return nothing
      */
-    function hide_logout()
+    /*function hide_logout()
     {
         $RCMAIL = rcmail::get_instance(0, $GLOBALS['env']);
         $RCMAIL->config->set('disabled_actions', 'logout');
         
-    }
+    }*/
     /**
      * shows default logo
      *
