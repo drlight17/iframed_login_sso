@@ -66,6 +66,9 @@ class iframed_login_sso extends rcube_plugin
         if (isset($_COOKIE["autologin"])&&($RCMAIL->config->get('hide_logo'))&&$iframed) {
             $this->include_stylesheet('hide_logo.css');
         }
+        
+        // add some styling fixes
+        $this->include_stylesheet('style.css');
 
 
         // init application, start session, init output class, etc.
