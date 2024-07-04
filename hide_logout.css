@@ -1,6 +1,6 @@
 a[href*='=logout'].logout {
     display:none!important;
 }
-a[name*='about'].about {
+/*a[name*='about'].about {
     margin-top: -10vh;
-}
+}*/
