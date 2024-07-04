@@ -8,7 +8,7 @@ To successfully use this plugin you will need:
 
 ## Step by step guide:
 1. Configure master login, password and seperator in your dovecot config
-2. Install and configure dovecot_impersonate plugin with the same separator from dovecot config
+2. Install and configure "dovecot_impersonate" plugin with the same separator from dovecot config
 3. (OPTIONAL)Configure your roundcube web server or reverse proxy to allow embedding roundcube into your server iframe (origin policies)
 4. Place plugin to the plugins dir of your roundcube instance
 ```
@@ -24,7 +24,7 @@ To successfully use this plugin you will need:
 ```
 sudo -u www-user /path/to/your/nextcloud/occ config:app:get external jwt_token_pubkey_es256
 ```
-7. Place "iframed_login_sso" in your roundcube config file in plugins array variable
+7. Place "iframed_login_sso" in your roundcube config file in plugins array variable (**WARNING!!! "dovecot_impersonate" plugin MUST BE AFTER "iframed_login_sso" or you will get wrong username and wrong identity in RC GUI !!!** )
 8. Use this url for iframe (!replace jwt_req_parameter with your set parameter in the plugin config.inc.php)
 `https://yourroundcubeserver.address/?_autologin=yes&jwt_req_parameter=formed_jwt_token`
 (OPTIONAL) For nextcloud external app use url below (with {jwt} placeholder, you can read more about it in the nextcloud external sites app settings menu)
