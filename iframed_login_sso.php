@@ -41,7 +41,7 @@ class iframed_login_sso extends rcube_plugin
         // load config
         $this->load_config('config.inc.php.dist');
         $this->load_config('config.inc.php');
-        $RCMAIL = rcmail::get_instance(0, $GLOBALS['env']);
+        $RCMAIL = rcmail::get_instance();
 
         // get webmail Location URL from $_SERVER
 
@@ -87,7 +87,7 @@ class iframed_login_sso extends rcube_plugin
      */
     function startup($args)
     {
-        $RCMAIL = rcmail::get_instance(0, $GLOBALS['env']);
+        $RCMAIL = rcmail::get_instance();
         if (!empty($_SESSION['user_id']) && !empty($_REQUEST['_autologin']) ) {
             // purge the session in case of new login when a session already exists
             $RCMAIL->kill_session();
